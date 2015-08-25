@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+    xmlns:gap       = "http://phonegap.com/ns/1.0"
+    xmlns:android   = "http://schemas.android.com/apk/res/android"
+    id              = "com.cmha.app"
+    versionCode     = "1"
+    version         = "0.1.68" >
+
+  <!-- versionCode is optional and Android only -->
+
+  <name>CMHA CoI/PBM</name>
+
+  <description>
+    CMHA employee conflict of interest and management assessment application
+  </description>
+
+  <author href="http://www.twelve12ltd.com" email="steve@twelve12ltd.com">
+    Steven Davies
+  </author>
+
+
+  <feature name="debug-server" required="true">
+    <param name="domain" value="http://192.168.1.101:8080"/>
+    <param name="key" value="cmhacoi-pbm"/>
+  </feature>
+  
+  <gap:platform name="android" />
+
+  <preference name="orientation" value="portrait" />
+  <preference name="fullscreen" value="true" />
+  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+
+  <icon src="icon.png" />
+  <gap:splash src="splash.png" />
+
+  <!--Plugins-->
+  <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+  <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
+  <gap:plugin name="com.phonegap.plugins.pushplugin"  />
+  
+</widget>

@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CMHA App</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+    <!--    <script src="http://192.168.1.101:8080/target/target-script-min.js"></script>-->
+    <script src="scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="scripts/request.js" type="text/javascript"></script>
+    <script src="scripts/cmha.js" type="text/javascript"></script>
+    <script src="scripts/conflict.js" type="text/javascript"></script>
+    <script src="scripts/pbm.js" type="text/javascript"></script>
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="PushNotification.js"></script>
+</head>
+<body>
+    <div class="screen">
+        <!--Header-->
+        <div class="header">
+            <img src="images/logo.png" alt="CMHA logo" />
+        </div>
+        <!--Loading icon-->
+        <div class="loader">
+            <img src="images/ajax-loader.gif" alt="loading icon" />
+        </div>
+        <!--App landing page-->
+        <div id="landing">
+            <div>
+                <div class="icon" id="coi-icon">
+                    <img src="images/CoI.png" alt="CoI icon" /><br />
+                    <br />
+                    Conflict of Interest</div>
+                <div class="icon" id="pbm-icon">
+                    <img src="images/360.png" alt="PBM360 icon" />Performance-based Management</div>
+            </div>
+            <!--<div>
+                <div class="icon">
+                    Conflict of Interest</div>
+                <div class="icon">
+                    Performance Based Management</div>
+            </div>-->
+        </div>
+        <!--CoI app-->
+        <div id="coi">
+            <h1 class="centered">
+                Conflict of Interest</h1>
+            <!--Login panel-->
+            <div id='content1' class="page-content">
+                <h2>
+                    Employee Verification</h2>
+                <div class="page-details">
+                    <p>
+                        The Conflict of Interest Disclosure period is annually from January 1 to January 31.  You are required to complete and
+                        submit a questionnaire during that period. Changes and/or modifications may be made throughout the year.</p>
+                    <br />
+                    <p>
+                        Enter the information below to complete a new form or view an existing Conflict
+                        of Interest form:</p>
+                </div>
+                <div class="login">
+                    <div class="col-1">
+                        <div class="label">
+                            Date of Birth:</div>
+                        <div class="label">
+                            Last four of SSN:</div>
+                    </div>
+                    <div class="col-2">
+                    <div class="dob"><select id="coi-month" class="month">
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select> / 
+                    <input id="coi-day" class="day" type="number" /> / 
+                    <input id="coi-year" class="year" type="number" />
+                    </div>
+                        
+                        <input class="input-login" id="coi-ssn4" type="number" placeholder="last 4 of ssn" /></div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Login" id="login" /></div>
+                </div>
+            </div>
+            <!--Personal Information review-->
+            <div id='content2' class="page-content">
+                <h2>
+                    Please review your personal information:</h2>
+                <div class="page-details">
+                    <div class="col-1">
+                        <div class="input-labels">
+                            First Name:</div>
+                        <div class="input-labels">
+                            Last Name:</div>
+                        <div class="input-labels">
+                            Address:</div>
+                        <div class="input-labels">
+                            Suite:</div>
+                        <div class="input-labels">
+                            City:</div>
+                        <div class="input-labels">
+                            State:</div>
+                        <div class="input-labels">
+                            Zip Code:</div>
+                        <div class="input-labels">
+                            Telephone:</div>
+                        <div class="input-labels">
+                            Department:
+                        </div>
+                        <div class="input-labels">
+                            Email:</div>
+                    </div>
+                    <div class="col-2">
+                        <div>
+                            <input id="fname" type="text" value="Steven" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="lname" type="text" value="Davies" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="address" type="text" value="1234 Somewhere Street NW" readonly="true"
+                                class="no_border" /></div>
+                        <div>
+                            <input id="suite" type="text" value="" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="city" type="text" value="Cleveland" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="state" type="text" value="Ohio" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="zip" type="number" value="44114" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="phone" type="tel" value="440-444-4444" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="dept" type="text" value="Quality Assurance" readonly="true" class="no_border" /></div>
+                        <div>
+                            <input id="email" type="email" value="steve@work.org" readonly="true" class="no_border" /></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Continue" id="continue" />
+                        <input class="button" type="button" id="edit0" value="Edit" />
+                        <input class="button" type="submit" value="Update" id="update" /></div>
+                </div>
+            </div>
+            <!--Work Info entry panel-->
+            <div id='content3' class="page-content">
+                <h2>
+                    Please enter your workplace information:</h2>
+                <div class="page-details">
+                    <div class="col-1">
+                        <div class="input-labels">
+                            Department:
+                        </div>
+                        <div class="input-labels">
+                            Address:</div>
+                        <div class="input-labels">
+                            City:</div>
+                        <div class="input-labels">
+                            State:</div>
+                        <div class="input-labels">
+                            Zip Code:</div>
+                        <div class="input-labels">
+                            Telephone:</div>
+                    </div>
+                    <div class="col-2">
+                        <div>
+                            <select id="wDept">
+                                <option value='0'>Please select a location...</option>
+                            </select></div>
+                        <div>
+                            <input id="wAddr" type="text" value="" /></div>
+                        <div>
+                            <input id="wCity" type="text" value="" /></div>
+                        <div>
+                            <input id="wState" type="text" value="" maxlength="2" /></div>
+                        <div>
+                            <input id="wZip" type="number" value="" /></div>
+                        <div>
+                            <input id="wTel" type="tel" value="" /></div>
+                    </div>
+                    <div class="controls">
+                        <div>
+                            <input class="button" type="submit" value="Continue" id="btn-wAddr" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--CoI completion and review message-->
+            <div id='content4' class="page-content">
+                <h2>
+                    You have completed the Conflict of Interest Employee Questionnaire and Verification
+                    Form</h2>
+                <div class="page-details">
+                    <div id="results" class="results">
+                        blank
+                    </div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Edit" id="edit1" /><input class="button"
+                            type="button" id="finish" value="Finish" /></div>
+                </div>
+            </div>
+            <!--CoI successful submission message-->
+            <div id='content5' class="page-content">
+                <h2>
+                    You have successfully submitted the Conflict of Interest Employee Questionnaire
+                    and Verification Form</h2>
+                <div class="page-details">
+                    <div>
+                        <div class="results">
+                            Your confirmation number is:
+                        </div>
+                        <div id="confirmation" class="results bold">
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Exit" id="exit" /></div>
+                </div>
+            </div>
+            <!--Question html-->
+            <div id='question' class="page-content">
+                <h2>
+                    Question <span id='qnum'>1</span></h2>
+                <div class="page-details question">
+                    <p>
+                        Are you employed by, been elected to, or appointed to any unit of Federal, State,
+                        or local government other than CMHA?</p>
+                </div>
+                <div>
+                    <div class="col-50">
+                        <input class="button" type="submit" value="Yes" id="yes" /></div>
+                    <div class="col-50">
+                        <input class="button" type="button" id="no" value="No" /></div>
+                </div>
+            </div>
+            <!--CoI Review html-->
+            <div id='review' class="page-content">
+                <h2>
+                    Review Response <span id='rqnum'>1</span></h2>
+                <div class="page-details question">
+                    <p>
+                        This is a review of the existing information in the responses array.</p>
+                </div>
+                <div>
+                    <h2>
+                        Your response:</h2>
+                    <h2 id="answer">
+                    </h2>
+                </div>
+                <div id="rdescription">
+                </div>
+                <div class="controls">
+                    <div>
+                        <div>
+                            <input class="button" type="button" id="next" value="Next" /><input type="button"
+                                class="button" value="Edit" id="edit2" /></div>
+                    </div>
+                </div>
+            </div>
+            <!--Conflict entry html-->
+            <div id='conflict' class='page-content'>
+                <textarea cols="1" rows="4" id="description" placeholder='Please explain...'></textarea>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Save" id="save" /></div>
+                </div>
+            </div>
+        </div>
+        <!-- PBM260 app -->
+        <div id="pbm">
+            <h1 class="centered">
+                Performance-based
+                <br />
+                Management
+                <br />
+                Feedback</h1>
+            <!--PBM login page-->
+            <div id='pbm1' class="page-content">
+                <div class="page-details">
+                    <p>
+                        The purpose of this application is to provide staff an opportunity to give his/her
+                        manager/supervisor the information he/she needs to improve the staff-supervisor
+                        relationship and better communicate.
+                    </p>
+                    <p>
+                        Please take the time to provide your feedback to meet this purpose. We appreciate
+                        your openness. Rest assured that your answers will be treated confidentially and
+                        with the utmost respect.</p>
+                </div>
+                <div class="login">
+                    <div class="col-1">
+                        <div class="label">
+                            Date of Birth:</div>
+                        <div class="label">
+                            Last four of SSN:</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="dob"><select id="pbm-month" class="month">
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select> / 
+                    <input id="pbm-day" class="day" type="number" /> / 
+                    <input id="pbm-year" class="year" type="number" />
+                    </div>
+                        <input class="input-login" id="pbm-ssn4" type="number" maxlength="4"
+                            placeholder="last 4 of ssn" /></div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Login" id="pbm-login" /></div>
+                </div>
+            </div>
+            <div id="pbm2" class="page-content">
+                <div class="page-details">
+                    <div>
+                        <h2>
+                            Your Information</h2>
+                        <div class="col-1">
+                            <div class="input-labels">
+                                Name:</div>
+                            <div class="input-labels">
+                                Employee ID:</div>
+                            <div class="input-labels">
+                                Supervisor:</div>
+                            <div class="input-labels">
+                                Email:</div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <input id="pbmName" type="text" value="" readonly="true" class="no_border" /></div>
+                            <div>
+                                <input id="pbmEmployeeID" type="text" value="" readonly="true" class="no_border" /></div>
+                            <div>
+                                <input id="pbmSupervisor" type="text" value="" readonly="true" class="no_border" /></div>
+                            <div>
+                                <input id="pbmEmail" type="text" value="" readonly="true" class="no_border" /></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>
+                            Instructions</h2>
+                        <p>
+                            Please read each statement carefully then make a selection from the drop down menu
+                            that best describes your assessment of your manager/supervisor regarding the statement.</p>
+                        <p>
+                            You may enter a comment in the field below the drop down to explain your selection.</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <input type='submit' value='Continue' id='btn-pbm-cont' class="button" />
+                </div>
+            </div>
+            <!--PBM questions-->
+            <div id='pbm3' class="page-content">
+                <h2>
+                    Question <span id='pbm-qnum'>1</span></h2>
+                <div class="page-details question-pbm">
+                    <p>
+                        Provides support; encourages development, suggestions and recognizes employee success.</p>
+                </div>
+                <div class="controls">
+                    <select id="ddChoice">
+                        <option value="5">Always</option>
+                        <option value="4">Most of the time</option>
+                        <option value="3">Sometimes</option>
+                        <option value="2">Not Often</option>
+                        <option value="1">Never</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea cols="1" rows="4" id='comment' placeholder='Enter comments here...'></textarea>
+                </div>
+                <div class="controls">
+                    <input type='submit' value='Next' id='btn-pbm-next' class="button" />
+                    <div>
+                        <input type="button" class="button" value="Edit" id="btn-pbm-edit" />
+                        <input type="button" class="button" value="Save" id="btn-pbm-save" />
+                    </div>
+                </div>
+            </div>
+            <!--PBM success page-->
+            <!--CoI successful submission message-->
+            <div id='pbm4' class="page-content">
+                <h2>
+                    You have successfully submitted the Performance-based Management 360 supervisor/manager
+                    feedback&nbsp;form</h2>
+                <div class="page-details">
+                    <div>
+                        <div class="results">
+                            Your confirmation number is:
+                        </div>
+                        <div id="pbm-confirm" class="results bold">
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <input class="button" type="submit" value="Exit" id="btn-pbm-exit" /></div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal dialog box -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="text">
+                    <p>
+                        You have already completed a <span id="appName"></span>for the current year. No
+                        further action is required. If you wish to reivew your answers, click "Review".
+                        Otherwise, click "CANCEL".</p>
+                </div>
+                <div class="col-50">
+                    <input class="button" type="submit" value="Review" id="btn-review" /></div>
+                <div class="col-50">
+                    <input class="button" type="button" id="btn-cancel" value="Cancel" /></div>
+            </div>
+        </div>
+        <div id="modal-verify" class="modal">
+            <div class="modal-content">
+                <div class="text">
+                <h2 class="verification">VERIFICATION</h2>
+                    <p>
+                        I declare that I have received, reviewed, understood and agreed to the Conflict of Interest Policy in Administrative 
+                        Order 11. I declare, further, that I have reported any and all actual, apparaent, or potential conflicts of which I am aware,
+                        and to the best of my knowledge, believe the answers are ture and complete. I understand that willfully making a statement
+                        containing false or misleading informaiton shall result in recommendations to the proper authorities for further investigation
+                        that can lead to discipline, up to, and including, discharge from employment, as provided by applicable CMHA regulations.
+                        I acknowledge that I am required to complete this questionnaire and submit it to CMHA's Compliance Director, and further
+                        understand, that failure to complete and submit this questionnaire in a timely manner may lead to disciplinary action, up to,
+                        and including, discharge from my employment.</p>
+                </div>
+                <div class="center">
+                    <input class="button" type="submit" value="OK" id="verify" /></div>
+            </div>
+        </div>
+        <div id="modal-error" class="modal error">
+            <div class="modal-content">
+                <div class="text">
+                    <p>
+                        The information you entered is incorrect. Please check your credentials and try
+                        again.</p>
+                </div>
+                <div class="center">
+                    <input class="button" type="submit" value="OK" id="btn-ok" /></div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+        <div id="userguide">
+            <a href="http://www.cmha.net:83/coi/coi_instructions.html">
+                Conflict of Interest User Guide</a></div>
+        <div id="version" class="text-small">
+        </div>
+    </div>
+</body>
+</html>

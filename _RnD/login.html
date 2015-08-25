@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test CoI</title>
+    <script src="../scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="../scripts/request.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var LoginInfo = {
+            dob: '',
+            ssn4: ''
+        }
+
+        var Locs = {};
+
+        $(document).ready(function () {
+            $('#send').on('click', function () {
+                LoginInfo.dob = $('#dob').val();
+                LoginInfo.ssn4 = $('#ssn').val();
+                $.ajax({
+                    method: "POST",
+                    url: "../CoI.ashx",
+                    data: JSON.stringify(LoginInfo)
+                })
+                 .done(function (msg) {
+                     alert("Data Saved: " + msg);
+                     alert(JSON.parse(msg));
+                     if (msg === 'success') { //console.log("you're loggin in") }
+                     else { //console.log('there was an error loggin in') }
+
+                 });
+
+
+                //console.log("dob: ", LoginInfo.dob, " ssn4: ", LoginInfo.ssn4);
+            });
+
+
+            requestJSON('../ddsupplier.ashx', '', function (data) {
+                //console.log('ddlsupplier: ', data.Locations)
+                Locs = data.Locations
+                for (i = 0; i < Locs.length; i++) {
+                    $('#select').append('<option value=' + Locs[i].lID + '>' + Locs[i].location + '</option>');
+                }
+            });
+
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        <span>Date of Birth</span><span><input id="dob" type="text" /></span></div>
+    <div>
+        <span>SSN4</span><span><input id="ssn" type="password" /></span></div>
+    <div>
+        <input id="send" type="button" value="send" /></div>
+    <div>
+        <select id="select">
+            <option value='0'>Please select a location...</option>
+        </select>
+    </div>
+</body>
+</html>

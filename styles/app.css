@@ -1,0 +1,435 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+    display: block;
+}
+body
+{
+    line-height: 1;
+}
+ol, ul
+{
+    list-style: none;
+}
+blockquote, q
+{
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after
+{
+    content: '';
+    content: none;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, select
+{
+    vertical-align: middle;
+}
+
+a
+{
+    color: Black;
+    text-decoration: none;
+}
+
+
+
+
+body
+{
+    font-family: Segoe UI, Segoe UI Semibold;
+}
+
+h1
+{
+    font-size: 24px;
+}
+h2
+{
+    font-size: 18px;
+    font-family: Segoe UI Semibold;
+    padding-top: 15px;
+}
+p
+{
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+textarea
+{
+    width: 300px;
+}
+
+.centered
+{
+    text-align: center;
+}
+
+.no_border
+{
+    border: none;
+    padding: 3px 0 3px 0;
+}
+
+.red_border
+{
+    border: 1px solid red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.text-small
+{
+    font-size: 10px;
+}
+
+.screen
+{
+    height: 100%;
+    width: 100%;
+}
+.screen-scroll
+{
+    height: 750px;
+    overflow: visible;
+}
+
+.header
+{
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    padding: 5px 0 5px 2px;
+    border-bottom: 1px solid rgb(0,115,207);
+}
+
+.loader
+{
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    width: 100%;
+    z-index: 100;
+}
+
+#landing
+{
+    padding-top: 50px;
+}
+
+.icon
+{
+    display: inline;
+    float: left;
+    height: 160px;
+    padding: 15px 0 10px 15px;
+    text-align: center;
+    width: 160px;
+}
+
+.icon:nth-of-type(2)
+{
+    padding-right: 10px;
+    float: right;
+}
+
+.icon img
+{
+    width: 140px;
+    padding: 0 0 5px 0;
+}
+
+.modal
+{
+    height: 490px;
+    width: 320px;
+    top: 100px;
+    background-color: rgb(147,176,0);
+    border: 1px solid blue;
+    opacity: 0.96;
+    z-index: 101;
+    margin-left: 20px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.modal-content
+{
+    color: #ffffff;
+    font-weight: bolder;
+    text-align: center;
+    top: 130px;
+    position: fixed;
+    margin: 0;
+    width: 290px;
+    text-shadow: 1px 0px silver;
+    padding-left: 15px;
+}
+
+.modal-content > .text
+{
+    padding-bottom: 30px;
+}
+
+#modal-verify > .modal-content > .text
+{
+    text-align: justify;
+}
+
+.modal-content .button
+{
+    font-weight: bold !important;
+}
+
+.error
+{
+    background-color: Red;
+}
+
+.content
+{
+    width: 90%;
+    font-size: 12px;
+    margin: auto;
+}
+
+.col-50
+{
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    text-align: center;
+}
+
+.col-1
+{
+    color: Blue;
+    float: left;
+    width: 33%;
+    text-align: right;
+}
+
+.col-1 div
+{
+    /*font-size: 13px;     padding: 2px 0 2px 5px;*/
+}
+
+.col-2
+{
+    font-weight: bold;
+    width: 67%;
+    display: inline-block;
+}
+
+.col-2 input
+{
+    font-size: 13px;
+    margin: 4px 0 2px 12px;
+}
+
+.results
+{
+    display: inline-block;
+    font-size: 14px;
+    padding: 25px 0 0 5px;
+}
+
+.details
+{
+    font-size: 11px;
+    padding: 11px 0 0px 13px;
+}
+
+.page-heading
+{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+.page-content
+{
+    width: 85%;
+    border: 1px white solid;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: auto;
+    padding: 5px 5px 0 5px;
+}
+.page-details
+{
+    padding-top: 5px;
+    margin: auto;
+    font-size: 9px;
+}
+
+.question
+{
+    height: 95px;
+    padding: 10px 5px 15px 10px;
+    text-align: justify;
+}
+.question-pbm
+{
+    height: 30px;
+    padding: 10px 5px 15px 10px;
+    text-align: justify;
+}
+
+.verification 
+{
+    text-align: center;
+    }
+
+
+.input-login
+{
+    height: 40px;
+    border: 0;
+    padding: 0 0 0 50px;
+    padding-left: 5px;
+    margin-left: 53px !important;
+    width: 144px;
+    color: gray;
+}
+
+.input-labels
+{
+    font-size: 13px;
+    padding: 6px 20px 9px 0px;
+}
+
+#content3 > div > div > div.input-labels:nth-of-type(2)
+{
+    padding-top: 28px;
+}
+
+select
+{
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-left: -15px;
+}
+
+.dob 
+{
+  margin-left: 35px;
+  padding-top: 10px;
+    }
+
+.month
+{
+    height: 35px;
+    padding: 3px 3px 3px 3px;
+    margin: 0 !important;
+}
+.day
+{
+    height: 25px;
+    padding: 3px 3px 3px 3px;
+    width: 20px;
+    margin: 0 !important;
+}
+.year
+{
+    height: 25px;
+    padding: 3px 3px 3px 3px;
+    width: 40px;
+    margin: 0 !important;
+}
+
+.data-labels
+{
+    font-size: 13px;
+    padding: 6px 0 7px 5px;
+}
+
+.controls
+{
+    padding-top: 15px;
+    margin: auto;
+    width: 120px;
+}
+
+.controls input
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+
+#review .controls
+{
+    /*position: absolute;*/
+    top: 325px;
+    left: 125px;
+}
+
+.login
+{
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+.label
+{
+    font-size: 12px;
+    padding: 19px 0 0 0;
+}
+.label:nth-of-type(2)
+{
+    padding: 33px 0 0 0;
+}
+.button
+{
+    border-radius: 4px;
+    padding-bottom: 1px;
+    font-weight: bolder;
+    color: #0000ff;
+    width: 80px;
+    height: 40px;
+}
+
+.footer
+{
+    background: rgb(0,115,207);
+    bottom: 0;
+    color: #ffffff;
+    left: 0;
+    height: 30px;
+    padding-top: 7px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+#dob
+{
+    width: 120px;
+}
+
+
+
+
+
+
